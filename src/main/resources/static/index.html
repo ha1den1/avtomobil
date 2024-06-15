@@ -73,6 +73,11 @@
         .hidden {
             display: none;
         }
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -147,10 +152,13 @@
         </tbody>
     </table>
 
+    <!-- Google Maps Section -->
+    <h2>Find Nearest Auto Shops in Vilnius</h2>
+    <div id="map"></div>
+
     <!-- Message Display -->
     <div id="message" class="message"></div>
 </div>
-
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Populate car models dropdown
@@ -320,6 +328,40 @@
             appointmentTable.style.display = 'none';
         }
     }
+
+    // Initialize and add the map
+    function initMap() {
+        const vilnius = { lat: 54.6872, lng: 25.2797 }; // Coordinates for Vilnius, Lithuania
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 13,
+            center: vilnius,
+        });
+
+        const service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+            location: vilnius,
+            radius: 5000, // 5 km radius
+            type: ['car_repair']
+        }, function(results, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                for (let i = 0; i < results.length; i++) {
+                    createMarker(results[i]);
+                }
+            } else {
+                alert('Places service was not successful for the following reason: ' + status);
+            }
+        });
+
+        function createMarker(place) {
+            new google.maps.Marker({
+                map,
+                position: place.geometry.location,
+                title: place.name
+            });
+        }
+    }
+
 </script>
+<script src="https://cdn.jsdelivr.net/gh/somanchiu/Keyless-Google-Maps-API@v6.6/mapsJavaScriptAPI.js"></script>
 </body>
 </html>

@@ -4,26 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19aa85d3-7e0d-43bd-a280-c964bfc3928a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/CarserviceshopApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/controller/AppointmentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/controller/CarController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/database/DataLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/model/Appointment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/model/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/repository/AppointmentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/repository/CarRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/service/AppointmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/service/CarService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+    <list default="true" id="19aa85d3-7e0d-43bd-a280-c964bfc3928a" name="Changes" comment="veikia su basic puslapiu ir dropdown menu">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,12 +61,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1718478412425</updated>
-      <workItem from="1718478413567" duration="4621000" />
+      <workItem from="1718478413567" duration="7588000" />
     </task>
+    <task id="LOCAL-00001" summary="veikia su basic puslapiu ir dropdown menu">
+      <option name="closed" value="true" />
+      <created>1718483093342</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718483093344</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="veikia su basic puslapiu ir dropdown menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="veikia su basic puslapiu ir dropdown menu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
