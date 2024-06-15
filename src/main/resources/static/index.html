@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Service Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+        }
+        select, input[type="datetime-local"], input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        .message {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Car Service Shop</h1>
+
+    <!-- Make Appointment Form -->
+    <h2>Make Appointment</h2>
+    <form id="appointmentForm" onsubmit="return makeAppointment()">
+        <div class="form-group">
+            <label for="carModel">Car Model:</label>
+            <select id="carModel" name="carModel" required onchange="toggleNewCarForm()">
+                <option value="">Select Car Model</option>
+            </select>
+        </div>
+        <div id="newCarForm" class="hidden">
+            <div class="form-group">
+                <label for="newCarMake">Car Make:</label>
+                <input type="text" id="newCarMake" name="newCarMake">
+            </div>
+            <div class="form-group">
+                <label for="newCarModel">Car Model:</label>
+                <input type="text" id="newCarModel" name="newCarModel">
+            </div>
+            <div class="form-group">
+                <label for="newCarYear">Car Year:</label>
+                <input type="text" id="newCarYear" name="newCarYear">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="appointmentDateTime">Appointment Date and Time:</label>
+            <input type="datetime-local" id="appointmentDateTime" name="appointmentDateTime" required>
+        </div>
+        <div class="form-group">
+            <label for="serviceDescription">Service Description:</label>
+            <textarea id="serviceDescription" name="serviceDescription" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn">Make Appointment</button>
+    </form>
+
+    <!-- View All Cars Button -->
+    <h2>View All Cars</h2>
+    <button class="btn" onclick="toggleAllCars()">View/Close All Cars</button>
+    <table id="carTable" style="display: none;">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+        </tr>
+        </thead>
+        <tbody id="carTableBody">
+        <!-- Cars will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <!-- View All Appointments Button -->
+    <h2>View All Appointments</h2>
+    <button class="btn" onclick="toggleAllAppointments()">View/Close All Appointments</button>
+    <table id="appointmentTable" style="display: none;">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Car Make and Model</th>
+            <th>Appointment Date and Time</th>
+            <th>Service Description</th>
+        </tr>
+        </thead>
+        <tbody id="appointmentTableBody">
+        <!-- Appointments will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <!-- Message Display -->
+    <div id="message" class="message"></div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Populate car models dropdown
+        fetch('/cars')
+            .then(response => response.json())
+            .then(data => {
+                const carModelSelect = document.getElementById('carModel');
+                carModelSelect.innerHTML = '<option value="">Select Car Model</option>';
+                data.forEach(car => {
+                    const option = document.createElement('option');
+                    option.value = car.id;
+                    option.textContent = `${car.make} ${car.model} (${car.year})`;
+                    carModelSelect.appendChild(option);
+                });
+                const option = document.createElement('option');
+                option.value = "new";
+                option.textContent = "My car is not listed";
+                carModelSelect.appendChild(option);
+            })
+            .catch(error => console.error('Error:', error));
+    });
+
+    function toggleNewCarForm() {
+        const carModelSelect = document.getElementById('carModel');
+        const newCarForm = document.getElementById('newCarForm');
+        if (carModelSelect.value === "new") {
+            newCarForm.classList.remove('hidden');
+        } else {
+            newCarForm.classList.add('hidden');
+        }
+    }
+
+    function makeAppointment() {
+        event.preventDefault();
+
+        const carId = document.getElementById('carModel').value;
+        const appointmentDateTime = document.getElementById('appointmentDateTime').value;
+        const serviceDescription = document.getElementById('serviceDescription').value;
+
+        let appointment;
+
+        if (carId === "new") {
+            const newCarMake = document.getElementById('newCarMake').value;
+            const newCarModel = document.getElementById('newCarModel').value;
+            const newCarYear = document.getElementById('newCarYear').value;
+
+            const newCar = {
+                make: newCarMake,
+                model: newCarModel,
+                year: newCarYear
+            };
+
+            fetch('/cars', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newCar)
+            })
+                .then(response => response.json())
+                .then(carData => {
+                    // Add new car to the dropdown
+                    const carModelSelect = document.getElementById('carModel');
+                    const option = document.createElement('option');
+                    option.value = carData.id;
+                    option.textContent = `${carData.make} ${carData.model} (${carData.year})`;
+                    carModelSelect.appendChild(option);
+                    carModelSelect.value = carData.id;
+
+                    appointment = {
+                        carId: carData.id,
+                        appointmentDateTime: appointmentDateTime,
+                        serviceDescription: serviceDescription
+                    };
+
+                    return fetch('/appointments', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(appointment)
+                    });
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('message').innerHTML = `<p>Appointment created successfully with ID: ${data.id}</p>`;
+                })
+                .catch(error => console.error('Error:', error));
+        } else {
+            appointment = {
+                carId: carId,
+                appointmentDateTime: appointmentDateTime,
+                serviceDescription: serviceDescription
+            };
+
+            fetch('/appointments', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(appointment)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('message').innerHTML = `<p>Appointment created successfully with ID: ${data.id}</p>`;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    }
+
+    function toggleAllCars() {
+        const carTable = document.getElementById('carTable');
+        if (carTable.style.display === 'none') {
+            fetch('/cars')
+                .then(response => response.json())
+                .then(data => {
+                    const carTableBody = document.getElementById('carTableBody');
+                    carTableBody.innerHTML = '';
+                    data.forEach(car => {
+                        const row = `<tr>
+                                            <td>${car.id}</td>
+                                            <td>${car.make}</td>
+                                            <td>${car.model}</td>
+                                            <td>${car.year}</td>
+                                        </tr>`;
+                        carTableBody.innerHTML += row;
+                    });
+                    carTable.style.display = 'block';
+                })
+                .catch(error => console.error('Error:', error));
+        } else {
+            carTable.style.display = 'none';
+        }
+    }
+
+    function toggleAllAppointments() {
+        const appointmentTable = document.getElementById('appointmentTable');
+        if (appointmentTable.style.display === 'none') {
+            fetch('/appointments')
+                .then(response => response.json())
+                .then(data => {
+                    return Promise.all(data.map(appointment => {
+                        return fetch(`/cars/${appointment.carId}`)
+                            .then(response => response.json())
+                            .then(carData => {
+                                appointment.carMakeModel = `${carData.make} ${carData.model}`;
+                                return appointment;
+                            });
+                    }));
+                })
+                .then(appointments => {
+                    const appointmentTableBody = document.getElementById('appointmentTableBody');
+                    appointmentTableBody.innerHTML = '';
+                    appointments.forEach(appointment => {
+                        const row = `<tr>
+                                            <td>${appointment.id}</td>
+                                            <td>${appointment.carMakeModel}</td>
+                                            <td>${appointment.appointmentDateTime}</td>
+                                            <td>${appointment.serviceDescription}</td>
+                                        </tr>`;
+                        appointmentTableBody.innerHTML += row;
+                    });
+                    appointmentTable.style.display = 'block';
+                })
+                .catch(error => console.error('Error:', error));
+        } else {
+            appointmentTable.style.display = 'none';
+        }
+    }
+</script>
+</body>
+</html>
