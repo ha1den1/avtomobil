@@ -1,11 +1,6 @@
-// Appointment.java
 package lt.viko.eif.rdelinda.automobile.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.time.LocalDateTime;
+import javax.persistence.*;
 
 @Entity
 public class Appointment {
@@ -15,8 +10,12 @@ public class Appointment {
     private Long id;
 
     private Long carId;
-    private LocalDateTime appointmentDateTime;
     private String serviceDescription;
+
+    @ManyToOne
+    @JoinColumn(name = "appointment_slot_id")
+    private AppointmentSlot appointmentSlot;
+    
 
     // Getters and setters
     public Long getId() {
@@ -35,19 +34,19 @@ public class Appointment {
         this.carId = carId;
     }
 
-    public LocalDateTime getAppointmentDateTime() {
-        return appointmentDateTime;
-    }
-
-    public void setAppointmentDateTime(LocalDateTime appointmentDateTime) {
-        this.appointmentDateTime = appointmentDateTime;
-    }
-
     public String getServiceDescription() {
         return serviceDescription;
     }
 
     public void setServiceDescription(String serviceDescription) {
         this.serviceDescription = serviceDescription;
+    }
+
+    public AppointmentSlot getAppointmentSlot() {
+        return appointmentSlot;
+    }
+
+    public void setAppointmentSlot(AppointmentSlot appointmentSlot) {
+        this.appointmentSlot = appointmentSlot;
     }
 }
