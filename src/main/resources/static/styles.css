@@ -1,36 +1,49 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-image: url('images/mechanic1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff; /* Ensure text is readable on the background */
 }
+
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+
 h1, h2 {
     text-align: center;
+    width: 100%;
 }
+
 form, table {
     margin-bottom: 20px;
+    width: 100%;
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
+
 table, th, td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
 }
+
 th {
     background-color: #f2f2f2;
 }
+
 .btn {
     padding: 10px 20px;
     background-color: #007bff;
@@ -38,16 +51,21 @@ th {
     border: none;
     cursor: pointer;
     border-radius: 4px;
+    margin: 5px;
 }
+
 .btn:hover {
     background-color: #0056b3;
 }
+
 .form-group {
     margin-bottom: 15px;
 }
+
 label {
     font-weight: bold;
 }
+
 select, input[type="datetime-local"], input[type="text"], textarea {
     width: 100%;
     padding: 8px;
@@ -56,6 +74,7 @@ select, input[type="datetime-local"], input[type="text"], textarea {
     box-sizing: border-box;
     font-size: 14px;
 }
+
 .message {
     padding: 10px;
     margin-top: 10px;
@@ -63,9 +82,11 @@ select, input[type="datetime-local"], input[type="text"], textarea {
     background-color: #f0f0f0;
     text-align: center;
 }
+
 .hidden {
     display: none;
 }
+
 #map {
     height: 400px;
     width: 100%;

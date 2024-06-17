@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19aa85d3-7e0d-43bd-a280-c964bfc3928a" name="Changes" comment="pridetas google maps ir kiti dalykai susije su drop down">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/controller/ServiceCenterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/model/ServiceCenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/repository/ServiceCenterRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/service/ServiceCenterService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/carModels.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/googleMaps.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/serviceCenters.js" afterDir="false" />
+    <list default="true" id="19aa85d3-7e0d-43bd-a280-c964bfc3928a" name="Changes" comment="Js split into few different classes, added service center into java">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/mechanic1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/mechanic2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/controller/AppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/database/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/database/DataLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/model/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/service/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/service/AppointmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/appointments.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +59,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\simas\IdeaProjects\avtomobil1\src\main\resources\static\images" />
       <recent name="C:\Users\simas\IdeaProjects\avtomobil1\src\main\resources\static\js" />
     </key>
   </component>
@@ -98,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718486084807</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="Js split into few different classes, added service center into java">
+      <option name="closed" value="true" />
+      <created>1718614318815</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1718614318815</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,7 +105,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="veikia su basic puslapiu ir dropdown menu" />
     <MESSAGE value="pridetas google maps ir kiti dalykai susije su drop down" />
-    <option name="LAST_COMMIT_MESSAGE" value="pridetas google maps ir kiti dalykai susije su drop down" />
+    <MESSAGE value="Js split into few different classes, added service center into java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Js split into few different classes, added service center into java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
