@@ -1,4 +1,3 @@
-// src/main/resources/static/js/serviceCenters.js
 export function populateServiceCenters() {
     fetch('/service-centers')
         .then(response => response.json())

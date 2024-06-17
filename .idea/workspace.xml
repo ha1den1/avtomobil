@@ -5,23 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19aa85d3-7e0d-43bd-a280-c964bfc3928a" name="Changes" comment="Js split into few different classes, added service center into java">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/CarserviceshopApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/CarserviceshopApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/controller/AppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/controller/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/controller/ServiceCenterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/controller/ServiceCenterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/database/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/database/DataLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/model/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/model/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/model/ServiceCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/model/ServiceCenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/repository/AppointmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/repository/AppointmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/repository/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/repository/CarRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/repository/ServiceCenterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/repository/ServiceCenterRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/service/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/service/AppointmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/service/CarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/service/ServiceCenterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/rdelinda/automobile/service/ServiceCenterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/appointments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/appointments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/carModels.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/carModels.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/googleMaps.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/googleMaps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/serviceCenters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/serviceCenters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +94,8 @@
       <option name="presentableId" value="Default" />
       <updated>1718478412425</updated>
       <workItem from="1718478413567" duration="7620000" />
+      <workItem from="1718625077450" duration="433000" />
+      <workItem from="1718625512056" duration="519000" />
     </task>
     <task id="LOCAL-00001" summary="veikia su basic puslapiu ir dropdown menu">
       <option name="closed" value="true" />

@@ -1,4 +1,3 @@
-// src/main/resources/static/js/app.js
 import { populateCarModels, toggleNewCarForm } from './carModels.js';
 import { populateServiceCenters } from './serviceCenters.js';
 import { makeAppointment, toggleAllAppointments, toggleAllCars } from './appointments.js';

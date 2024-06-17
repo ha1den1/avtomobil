@@ -1,4 +1,3 @@
-// src/main/resources/static/js/carModels.js
 export function populateCarModels() {
     fetch('/cars')
         .then(response => response.json())
