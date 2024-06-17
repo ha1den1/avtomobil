@@ -1,6 +1,6 @@
 // src/main/resources/static/js/googleMaps.js
 export function initMap() {
-    const vilnius = { lat: 54.6872, lng: 25.2797 };
+    const vilnius = { lat: 54.722470, lng: 25.289500 };
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 13,
         center: vilnius,
@@ -11,8 +11,8 @@ export function initMap() {
         { lat: 54.722470, lng: 25.289500, name: 'Tire change' },
         { lat: 54.722037, lng: 25.295260, name: 'Autoservice' },
         { lat: 54.722470, lng: 25.281500, name: 'Stop-Servis' },
-        { lat: 54.6840, lng: 25.2829, name: 'Car Fix' },
-        { lat: 54.6951, lng: 25.2753, name: 'Speedy Repair' }
+        // { lat: 54.6840, lng: 25.2829, name: 'Car Fix' },
+        // { lat: 54.6951, lng: 25.2753, name: 'Speedy Repair' }
     ];
 
     // Create markers for predefined locations

@@ -29,8 +29,8 @@ public class DataLoader implements CommandLineRunner {
         carRepository.save(new Car("Opel", "Astra", 2009));
 
         // Create service center entries
-        serviceCenterRepository.save(new ServiceCenter("Vilnius Auto Service", "123 Vilnius St", "123-456-7890"));
-        serviceCenterRepository.save(new ServiceCenter("Kaunas Car Repair", "456 Kaunas Rd", "098-765-4321"));
-        serviceCenterRepository.save(new ServiceCenter("Klaipeda Mechanics", "789 Klaipeda Ave", "567-890-1234"));
+        serviceCenterRepository.save(new ServiceCenter("Tire Change", "Žvalgų g. 51, Vilnius", "069829311"));
+        serviceCenterRepository.save(new ServiceCenter("Autoresvice", "Verkių g. 52, Vilnius", "067756523"));
+        serviceCenterRepository.save(new ServiceCenter("Stop-Servis", "J. Kazlausko g. 1, Vilnius", "567-890-1234"));
     }
 }
