@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * Entity representing a service center.
+ */
 @Entity
 public class ServiceCenter {
 
@@ -16,7 +19,6 @@ public class ServiceCenter {
     private String address;
     private String phone;
 
-    // Constructors
     public ServiceCenter() {}
 
     public ServiceCenter(String name, String address, String phone) {
@@ -25,7 +27,6 @@ public class ServiceCenter {
         this.phone = phone;
     }
 
-    // Getters and setters
     public Long getId() {
         return id;
     }

@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+/**
+ * Component to preload data into the database on application startup.
+ */
 @Component
 public class DataLoader implements CommandLineRunner {
 
@@ -17,9 +20,15 @@ public class DataLoader implements CommandLineRunner {
     @Autowired
     private ServiceCenterRepository serviceCenterRepository;
 
+    /**
+     * Preloads data into the database.
+     *
+     * @param args Command line arguments.
+     * @throws Exception If an error occurs during data loading.
+     */
     @Override
     public void run(String... args) throws Exception {
-        // Create car entries
+
         carRepository.save(new Car("Toyota", "Camry", 2022));
         carRepository.save(new Car("Honda", "Civic", 2023));
         carRepository.save(new Car("Ford", "Mustang", 2021));
@@ -28,7 +37,7 @@ public class DataLoader implements CommandLineRunner {
         carRepository.save(new Car("BMW", "E92", 2007));
         carRepository.save(new Car("Opel", "Astra", 2009));
 
-        // Create service center entries
+
         serviceCenterRepository.save(new ServiceCenter("Tire Change", "Žvalgų g. 51, Vilnius", "069829311"));
         serviceCenterRepository.save(new ServiceCenter("Autoresvice", "Verkių g. 52, Vilnius", "067756523"));
         serviceCenterRepository.save(new ServiceCenter("Stop-Servis", "J. Kazlausko g. 1, Vilnius", "567-890-1234"));

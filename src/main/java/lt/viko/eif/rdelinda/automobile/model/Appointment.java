@@ -3,6 +3,9 @@ package lt.viko.eif.rdelinda.automobile.model;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+/**
+ * Entity representing an appointment.
+ */
 @Entity
 public class Appointment {
 
@@ -18,7 +21,6 @@ public class Appointment {
     @JoinColumn(name = "service_center_id")
     private ServiceCenter serviceCenter;
 
-    // Getters and setters
     public Long getId() {
         return id;
     }
