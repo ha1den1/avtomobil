@@ -1,9 +1,8 @@
-// AppointmentService.java
 package lt.viko.eif.rdelinda.automobile.service;
-
 
 import lt.viko.eif.rdelinda.automobile.model.Appointment;
 import lt.viko.eif.rdelinda.automobile.repository.AppointmentRepository;
+import lt.viko.eif.rdelinda.automobile.repository.ServiceCenterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +13,9 @@ public class AppointmentService {
 
     @Autowired
     private AppointmentRepository appointmentRepository;
+
+    @Autowired
+    private ServiceCenterRepository serviceCenterRepository;
 
     public List<Appointment> getAllAppointments() {
         return appointmentRepository.findAll();

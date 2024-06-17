@@ -1,6 +1,4 @@
-// AppointmentController.java
 package lt.viko.eif.rdelinda.automobile.controller;
-
 
 import lt.viko.eif.rdelinda.automobile.model.Appointment;
 import lt.viko.eif.rdelinda.automobile.service.AppointmentService;
@@ -11,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/appointments")
+@CrossOrigin(origins = "*")
 public class AppointmentController {
 
     @Autowired

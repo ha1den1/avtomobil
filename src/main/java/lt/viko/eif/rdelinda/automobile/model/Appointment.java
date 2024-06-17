@@ -1,10 +1,6 @@
-// Appointment.java
 package lt.viko.eif.rdelinda.automobile.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -17,6 +13,10 @@ public class Appointment {
     private Long carId;
     private LocalDateTime appointmentDateTime;
     private String serviceDescription;
+
+    @ManyToOne
+    @JoinColumn(name = "service_center_id")
+    private ServiceCenter serviceCenter;
 
     // Getters and setters
     public Long getId() {
@@ -49,5 +49,13 @@ public class Appointment {
 
     public void setServiceDescription(String serviceDescription) {
         this.serviceDescription = serviceDescription;
+    }
+
+    public ServiceCenter getServiceCenter() {
+        return serviceCenter;
+    }
+
+    public void setServiceCenter(ServiceCenter serviceCenter) {
+        this.serviceCenter = serviceCenter;
     }
 }

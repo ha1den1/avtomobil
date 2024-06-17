@@ -41,6 +41,12 @@
             <label for="serviceDescription">Service Description:</label>
             <textarea id="serviceDescription" name="serviceDescription" rows="4" required></textarea>
         </div>
+        <div class="form-group">
+            <label for="mechanicCenter">Mechanic Center:</label>
+            <select id="mechanicCenter" name="mechanicCenter" required>
+                <option value="">Select Mechanic Center</option>
+            </select>
+        </div>
         <button type="submit" class="btn">Make Appointment</button>
     </form>
 
@@ -70,6 +76,7 @@
             <th>Car Make and Model</th>
             <th>Appointment Date and Time</th>
             <th>Service Description</th>
+            <th>Service Center</th>
         </tr>
         </thead>
         <tbody id="appointmentTableBody">
@@ -83,7 +90,7 @@
     <!-- Message Display -->
     <div id="message" class="message"></div>
 </div>
-<script src="app.js"></script>
+<script type="module" src="js/app.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/somanchiu/Keyless-Google-Maps-API@v6.6/mapsJavaScriptAPI.js"></script>
 </body>
 </html>
