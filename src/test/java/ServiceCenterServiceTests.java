@@ -1,0 +1,87 @@
+import lt.viko.eif.rdelinda.automobile.model.ServiceCenter;
+import lt.viko.eif.rdelinda.automobile.repository.ServiceCenterRepository;
+import lt.viko.eif.rdelinda.automobile.service.ServiceCenterService;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
+
+public class ServiceCenterServiceTests {
+
+    @Mock
+    private ServiceCenterRepository serviceCenterRepository;
+
+    @InjectMocks
+    private ServiceCenterService serviceCenterService;
+
+    public ServiceCenterServiceTests() {
+        MockitoAnnotations.openMocks(this);
+    }
+
+    @Test
+    public void testGetAllServiceCenters() {
+        // Mock data
+        ServiceCenter serviceCenter1 = new ServiceCenter("Test Center 1", "Test Address 1", "123456789");
+        ServiceCenter serviceCenter2 = new ServiceCenter("Test Center 2", "Test Address 2", "987654321");
+        List<ServiceCenter> serviceCenters = Arrays.asList(serviceCenter1, serviceCenter2);
+
+        // Mock behavior
+        when(serviceCenterRepository.findAll()).thenReturn(serviceCenters);
+
+        // Call service method
+        List<ServiceCenter> returnedServiceCenters = serviceCenterService.getAllServiceCenters();
+
+        // Verify
+        assertEquals(2, returnedServiceCenters.size());
+    }
+
+    @Test
+    public void testGetServiceCenterById() {
+        // Mock data
+        ServiceCenter serviceCenter = new ServiceCenter("Test Center", "Test Address", "123456789");
+
+        // Mock behavior
+        when(serviceCenterRepository.findById(1L)).thenReturn(Optional.of(serviceCenter));
+
+        // Call service method
+        ServiceCenter returnedServiceCenter = serviceCenterService.getServiceCenterById(1L);
+
+        // Verify
+        assertEquals("Test Center", returnedServiceCenter.getName());
+    }
+
+    @Test
+    public void testSaveServiceCenter() {
+        // Mock data
+        ServiceCenter newServiceCenter = new ServiceCenter("New Center", "New Address", "555555555");
+
+        // Mock behavior
+        when(serviceCenterRepository.save(any(ServiceCenter.class))).thenReturn(newServiceCenter);
+
+        // Call service method
+        ServiceCenter savedServiceCenter = serviceCenterService.saveServiceCenter(newServiceCenter);
+
+        // Verify
+        assertEquals("New Center", savedServiceCenter.getName());
+    }
+
+    @Test
+    public void testDeleteServiceCenter() {
+        // Mock behavior
+        doNothing().when(serviceCenterRepository).deleteById(1L);
+
+        // Call service method
+        serviceCenterService.deleteServiceCenter(1L);
+
+        // Verify
+        verify(serviceCenterRepository, times(1)).deleteById(1L);
+    }
+}
