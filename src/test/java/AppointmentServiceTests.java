@@ -29,21 +29,20 @@ public class AppointmentServiceTests {
 
     @Test
     public void testGetAllAppointments() {
-        // Test logic
     }
 
     @Test
     public void testGetAppointmentById() {
-        // Test logic
+
     }
 
     @Test
     public void testSaveAppointment() {
-        // Test logic
+
     }
 
     @Test
     public void testDeleteAppointment() {
-        // Test logic
+
     }
 }
